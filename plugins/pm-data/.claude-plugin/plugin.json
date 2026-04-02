@@ -1,0 +1,13 @@
+{
+  "$schema": "https://anthropic.com/claude-code/plugin.schema.json",
+  "name": "pm-data",
+  "version": "1.0.0",
+  "description": "Data & analytics skills: Metrics Framework, SQL Query Explainer, Dashboard Brief. Build North Star metric trees, explain and optimise SQL, and spec dashboards from business questions.",
+  "author": {
+    "name": "Mohit Aggarwal",
+    "email": "mohit15856@gmail.com"
+  },
+  "homepage": "https://github.com/mohitagw15856/pm-claude-skills",
+  "license": "MIT",
+  "keywords": ["product-management", "data", "analytics", "metrics", "north-star", "sql", "dashboard", "kpi"]
+}
