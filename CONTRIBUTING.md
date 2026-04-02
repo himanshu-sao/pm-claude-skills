@@ -22,18 +22,16 @@ Click **Fork** in the top right of the GitHub repo. This creates your own copy.
 
 ### Step 2: Clone your fork
 
-```bash
 git clone https://github.com/YOUR_USERNAME/pm-claude-skills.git
 cd pm-claude-skills
-```
+
 
 ### Step 3: Create your skill folder
 
 Skills live in the `skills/` directory. Create a folder named after your skill using lowercase and hyphens:
 
-```bash
 mkdir skills/your-skill-name
-```
+
 
 **Naming rules:**
 - Lowercase only
@@ -46,7 +44,6 @@ Every skill needs exactly one file: `SKILL.md` (uppercase, `.md` extension).
 
 **Minimum required structure:**
 
-```markdown
 ---
 name: your-skill-name
 description: "One sentence. Use when [trigger condition]. Produces [output description]."
@@ -55,7 +52,7 @@ description: "One sentence. Use when [trigger condition]. Produces [output descr
 # Skill Title
 
 [Your skill instructions here]
-```
+
 
 **The description field is the most important part.** It's what Claude reads (~100 tokens) to decide if your skill is relevant. Write it like this:
 
@@ -65,7 +62,6 @@ description: "One sentence. Use when [trigger condition]. Produces [output descr
 
 **Full recommended structure for a quality skill:**
 
-```markdown
 ---
 name: your-skill-name
 description: "..."
@@ -91,7 +87,7 @@ A checklist Claude runs before delivering output.
 
 - "Example phrase that would activate this skill"
 - "Another example"
-```
+
 
 ### Step 5: Test your skill locally
 
@@ -105,11 +101,10 @@ Before submitting:
 
 ### Step 6: Commit and push
 
-```bash
 git add skills/your-skill-name/SKILL.md
 git commit -m "feat: add [skill-name] skill for [profession/use case]"
 git push origin main
-```
+
 
 ### Step 7: Open a Pull Request
 
