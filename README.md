@@ -10,17 +10,15 @@ A community-built library of Claude Skills covering product management, marketin
 
 In Claude Code, run:
 
-```bash
 /plugin marketplace add mohitagw15856/pm-claude-skills
-```
+
 
 Or clone and symlink for auto-updates:
 
-```bash
 git clone https://github.com/mohitagw15856/pm-claude-skills.git ~/pm-claude-skills
 mkdir -p ~/.claude/skills
 ln -s ~/pm-claude-skills/skills/* ~/.claude/skills/
-```
+
 
 That's it. All 53 skills are now available in every Claude Code session.
 
@@ -129,7 +127,6 @@ This is an open-source community library. If you've built a skill that saves you
 4. Raise a pull request with a short description of what the skill does and why you built it
 
 **SKILL.md template:**
-```markdown
 ---
 name: your-skill-name
 description: "One sentence description. Use when [trigger condition]. Does [output description]."
@@ -138,7 +135,7 @@ description: "One sentence description. Use when [trigger condition]. Does [outp
 # Skill Title
 
 [Instructions for Claude to follow when this skill is invoked]
-```
+
 
 **What makes a good skill:**
 - Solves a recurring professional workflow (not a one-off task)
