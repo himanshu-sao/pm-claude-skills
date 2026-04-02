@@ -1,197 +1,169 @@
-# Contributing to PM Claude Skills
+# Contributing to pm-claude-skills
 
-Thank you for considering contributing to PM Claude Skills! This document provides guidelines for contributing.
+Thank you for wanting to contribute. This repo grows through community submissions — every profession added makes it more useful for everyone.
 
-## Ways to Contribute
+---
 
-### 1. Report Bugs 🐛
+## What We're Looking For
 
-If you find a bug in a Skill:
+Good skills have three things in common:
 
-1. Check if the issue already exists in [Issues](https://github.com/mohitagw15856/pm-claude-skills/issues)
-2. If not, create a new issue using the Bug Report template
-3. Include:
-   - Which Skill has the issue
-   - What you expected to happen
-   - What actually happened
-   - Steps to reproduce
-   - Your Claude version (Pro/Team/Enterprise)
+1. **They solve a recurring workflow** — not a one-off task. If you do this thing more than once a week and it follows a consistent structure, it's probably a good skill candidate.
+2. **They have a clear trigger** — Claude needs to know when to activate the skill. The `description` in your frontmatter is what Claude reads to decide if your skill is relevant. Make it specific.
+3. **They produce structured, useful output** — the output should be something you'd actually use at work, not a generic response.
 
-### 2. Request Skills 💡
+---
 
-Have an idea for a new Skill?
+## How to Submit a Skill
 
-1. Check [existing issues](https://github.com/mohitagw15856/pm-claude-skills/issues?q=is%3Aissue+label%3Aenhancement) to avoid duplicates
-2. Create a new issue using the Skill Request template
-3. Describe:
-   - What PM task the Skill would help with
-   - How you currently do this task
-   - Time you spend on it
-   - Example outputs
+### Step 1: Fork the repo
 
-### 3. Improve Documentation 📚
+Click **Fork** in the top right of the GitHub repo. This creates your own copy.
 
-Documentation improvements are always welcome:
+### Step 2: Clone your fork
 
-- Fix typos or unclear instructions
-- Add examples
-- Improve installation guides
-- Share your use cases
-
-### 4. Submit Skills 🎁
-
-Want to contribute a Skill you've created?
-
-**Requirements:**
-- Skill must be PM-related
-- Include complete SKILL.md with proper frontmatter
-- Provide examples of outputs
-- Must be tested and working
-- Include documentation
-
-**Process:**
-1. Fork the repository
-2. Create a new branch: `git checkout -b skill/your-skill-name`
-3. Add your Skill to `skills/your-skill-name/`
-4. Update main README.md to list your Skill
-5. Submit a Pull Request
-
-### 5. Improve Existing Skills 🔧
-
-Found a way to make a Skill better?
-
-1. Fork the repository
-2. Make your improvements
-3. Test thoroughly
-4. Submit a Pull Request with:
-   - Clear description of changes
-   - Why the change improves the Skill
-   - Before/after examples if applicable
-
-## Skill Contribution Guidelines
-
-### Structure
-
-Every Skill must follow this structure:
-
-```
-skill-name/
-├── SKILL.md (required)
-└── [other resources as needed]
+```bash
+git clone https://github.com/YOUR_USERNAME/pm-claude-skills.git
+cd pm-claude-skills
 ```
 
-### SKILL.md Format
+### Step 3: Create your skill folder
+
+Skills live in the `skills/` directory. Create a folder named after your skill using lowercase and hyphens:
+
+```bash
+mkdir skills/your-skill-name
+```
+
+**Naming rules:**
+- Lowercase only
+- Hyphens between words (no underscores, no spaces)
+- Descriptive but concise: `legal-contract-review` not `skill-for-reviewing-legal-contracts`
+
+### Step 4: Create your SKILL.md
+
+Every skill needs exactly one file: `SKILL.md` (uppercase, `.md` extension).
+
+**Minimum required structure:**
 
 ```markdown
 ---
-name: skill-name
-description: Clear description of what the skill does and when to use it. This is critical - Claude uses this to decide when to trigger the skill.
+name: your-skill-name
+description: "One sentence. Use when [trigger condition]. Produces [output description]."
 ---
 
-# Skill Name
+# Skill Title
 
-[Detailed instructions for using the skill]
-
-## Structure/Template
-
-[The format/structure the skill should follow]
-
-## Guidelines
-
-[Best practices and tips]
-
-## Examples
-
-[Example outputs]
+[Your skill instructions here]
 ```
 
-### Quality Standards
+**The description field is the most important part.** It's what Claude reads (~100 tokens) to decide if your skill is relevant. Write it like this:
 
-Skills should:
-- ✅ Be well-documented and clear
-- ✅ Include concrete examples
-- ✅ Follow PM best practices
-- ✅ Save meaningful time (not trivial tasks)
-- ✅ Be tested and working
-- ✅ Be general enough for others to use
-- ❌ Not include proprietary company information
-- ❌ Not require external tools (unless clearly documented)
+✅ Good: `"Write structured incident postmortems. Use when asked for a postmortem, RCA, incident report, or P1/P2 review. Produces a blameless postmortem with timeline, root cause, impact, and action items."`
 
-## Pull Request Process
+❌ Too vague: `"Helps with incident reports."`
 
-1. **Fork & Branch**
-   ```bash
-   git clone https://github.com/mohitagw15856/pm-claude-skills.git
-   cd pm-claude-skills
-   git checkout -b feature/your-feature-name
-   ```
+**Full recommended structure for a quality skill:**
 
-2. **Make Changes**
-   - Follow existing code style
-   - Update documentation
-   - Add examples
+```markdown
+---
+name: your-skill-name
+description: "..."
+---
 
-3. **Test**
-   - Test the Skill in Claude
-   - Verify it works as expected
-   - Check for edge cases
+# Skill Title
 
-4. **Commit**
-   ```bash
-   git add .
-   git commit -m "Add: Brief description of changes"
-   ```
+Brief description of what this skill does.
 
-5. **Push & Create PR**
-   ```bash
-   git push origin feature/your-feature-name
-   ```
-   Then create a Pull Request on GitHub
+## Required Inputs
 
-6. **PR Description Should Include:**
-   - What changes you made
-   - Why you made them
-   - How to test them
-   - Screenshots/examples (if applicable)
+What Claude should ask for if the user doesn't provide it.
 
-## Code of Conduct
+## Output Structure
 
-### Our Standards
+The exact format and sections Claude should produce.
 
-- Be respectful and inclusive
-- Welcome newcomers
-- Accept constructive criticism
-- Focus on what's best for the community
-- Show empathy towards others
+## Quality Checks
 
-### Unacceptable Behavior
+A checklist Claude runs before delivering output.
 
-- Harassment or discriminatory language
-- Trolling or insulting comments
-- Personal or political attacks
-- Publishing private information
-- Unprofessional conduct
+## Example Trigger Phrases
 
-### Enforcement
+- "Example phrase that would activate this skill"
+- "Another example"
+```
 
-Violations may result in:
-1. Warning
-2. Temporary ban
-3. Permanent ban
+### Step 5: Test your skill locally
 
-Report violations to: [mohit15856@gmail.com]
+Before submitting:
+
+1. Copy your skill folder to `~/.claude/skills/`
+2. Open Claude Code
+3. Try your example trigger phrases
+4. Verify the output matches what your SKILL.md describes
+5. Adjust and refine until it's working well
+
+### Step 6: Commit and push
+
+```bash
+git add skills/your-skill-name/SKILL.md
+git commit -m "feat: add [skill-name] skill for [profession/use case]"
+git push origin main
+```
+
+### Step 7: Open a Pull Request
+
+Go to your fork on GitHub and click **"Compare & pull request"**.
+
+In your PR description, include:
+- **What the skill does** (1–2 sentences)
+- **Who it's for** (profession or role)
+- **Why you built it** (what workflow pain does it solve?)
+- **Example output** (paste a sample or screenshot — helps with review)
+
+---
+
+## Review Process
+
+- PRs are reviewed weekly (usually Fridays)
+- Feedback will be left as PR comments — usually requesting a description improvement or output structure refinement
+- Once approved, your skill is merged and added to the README
+- Your GitHub handle is added to the Contributors section
+
+---
+
+## What Gets Rejected
+
+- Skills with vague descriptions that would trigger on too many unrelated tasks
+- Skills that just wrap a single simple prompt (a skill should have structure and logic)
+- Duplicate skills — check the existing skills list before submitting
+- Skills that require external API keys or services not everyone has access to (unless clearly documented)
+
+---
+
+## Skills Wishlist
+
+These have been requested but not yet built. Pick one up if you have the expertise:
+
+| Skill | Use case |
+|---|---|
+| `legal-contract-review` | Flag key clauses and risks in contracts |
+| `financial-model-narrative` | Turn spreadsheet outputs into board-ready narrative |
+| `hr-job-description` | Write inclusive, structured JDs from a role brief |
+| `onboarding-plan` | 30/60/90-day plan for new hires |
+| `press-release` | Structured press releases from product announcements |
+| `seo-content-brief` | Content briefs with keyword strategy and outline |
+| `grant-proposal` | Structure grant applications for nonprofits and researchers |
+| `sales-battlecard` | Competitive battlecards for sales teams |
+
+Suggest a new skill: [Open an issue](../../issues/new) with the label `skill-request`.
+
+---
 
 ## Questions?
 
-- 💬 Start a [Discussion](https://github.com/mohitagw15856/pm-claude-skills/discussions)
-- ✉️ Email: [mohit15856@gmail.com]
-- 🐦 Twitter: [@yourhandle]
+Open a [Discussion](../../discussions) or raise an [Issue](../../issues). Happy to help you get a skill PR-ready.
 
-## Recognition
+---
 
-Contributors will be:
-- Listed in the project README
-- Credited in the Skill they contributed
-- Mentioned in release notes
-
-Thank you for contributing! 🙏
+*Thank you for contributing. Every skill added here saves someone an hour they'd rather spend on something else.*
