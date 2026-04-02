@@ -40,10 +40,9 @@ Get your first PM Skill working in 5 minutes.
 
 Start a new conversation and try:
 
-```
 Help me write a PRD for a mobile app feature 
 that lets users save articles for later reading
-```
+
 
 Claude should automatically use the PRD Template Skill and create a structured PRD.
 
