@@ -1,8 +1,8 @@
 {
   "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
   "name": "pm-claude-skills",
-  "version": "3.0.0",
-  "description": "33 production-ready Claude Skills for Product Managers — covering the full PM lifecycle from discovery to launch. Save 10-15 hours per week.",
+  "version": "4.0.0",
+  "description": "53 Claude Skills across 6 professions — product management, marketing, engineering, data, design, and leadership. Save 10-15 hours per week.",
   "owner": {
     "name": "Mohit Aggarwal",
     "email": "mohit15856@gmail.com"
@@ -70,6 +70,54 @@
       "version": "3.0.0",
       "category": "productivity",
       "source": "./plugins/pm-rituals",
+      "homepage": "https://github.com/mohitagw15856/pm-claude-skills"
+    },
+    {
+      "name": "pm-gtm",
+      "description": "Marketing & GTM skills: Go-To-Market Planner, Content Calendar, Competitor Teardown, Email Campaign. Build positioning statements, messaging pillars, feature lists, use cases, and launch campaigns.",
+      "version": "1.0.0",
+      "category": "productivity",
+      "source": "./plugins/pm-gtm",
+      "homepage": "https://github.com/mohitagw15856/pm-claude-skills"
+    },
+    {
+      "name": "pm-engineering",
+      "description": "Engineering & tech skills: Code Review Checklist, Incident Postmortem, API Docs Writer, Architecture Decision Record. Structured outputs for engineering teams and technical PMs.",
+      "version": "1.0.0",
+      "category": "productivity",
+      "source": "./plugins/pm-engineering",
+      "homepage": "https://github.com/mohitagw15856/pm-claude-skills"
+    },
+    {
+      "name": "pm-data",
+      "description": "Data & analytics skills: Metrics Framework, SQL Query Explainer, Dashboard Brief. Build North Star metric trees, explain and optimise SQL, and spec dashboards from business questions.",
+      "version": "1.0.0",
+      "category": "productivity",
+      "source": "./plugins/pm-data",
+      "homepage": "https://github.com/mohitagw15856/pm-claude-skills"
+    },
+    {
+      "name": "pm-people",
+      "description": "Leadership & people skills: Performance Review, Hiring Rubric, Team Offsite Planner. Write structured reviews, build interview scorecards, and plan offsites from goals to minute-by-minute agenda.",
+      "version": "1.0.0",
+      "category": "productivity",
+      "source": "./plugins/pm-people",
+      "homepage": "https://github.com/mohitagw15856/pm-claude-skills"
+    },
+    {
+      "name": "pm-design",
+      "description": "Design & UX skills: UX Research Plan, Design Critique, Accessibility Audit. Create research plans with discussion guides, critique designs using JTBD and Gestalt principles, audit for WCAG 2.2 compliance.",
+      "version": "1.0.0",
+      "category": "productivity",
+      "source": "./plugins/pm-design",
+      "homepage": "https://github.com/mohitagw15856/pm-claude-skills"
+    },
+    {
+      "name": "pm-business",
+      "description": "Business & strategy skills: Investor Update, Board Deck Narrative, Job Application. Write investor updates investors actually read, structure board presentations, and tailor CVs with ATS optimisation.",
+      "version": "1.0.0",
+      "category": "productivity",
+      "source": "./plugins/pm-business",
       "homepage": "https://github.com/mohitagw15856/pm-claude-skills"
     }
   ]
