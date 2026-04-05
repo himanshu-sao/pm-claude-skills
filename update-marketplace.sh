@@ -1,8 +1,19 @@
+#!/bin/bash
+
+# =============================================================================
+# update-marketplace.sh
+# Run from the ROOT of your pm-claude-skills repo.
+# Rewrites .claude-plugin/marketplace.json with all 14 plugins.
+# =============================================================================
+
+set -e
+
+cat > .claude-plugin/marketplace.json << 'EOF'
 {
   "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
   "name": "pm-claude-skills",
-  "version": "5.0.0",
-  "description": "80 Claude Skills across 13 professions — product management, marketing, engineering, data, design, leadership, legal, finance, HR, sales, operations, research, and more. Save 10-15 hours per week.",
+  "version": "4.0.0",
+  "description": "53 Claude Skills across 6 professions — product management, marketing, engineering, data, design, and leadership. Save 10-15 hours per week.",
   "owner": {
     "name": "Mohit Aggarwal",
     "email": "mohit15856@gmail.com"
@@ -119,62 +130,14 @@
       "category": "productivity",
       "source": "./plugins/pm-business",
       "homepage": "https://github.com/mohitagw15856/pm-claude-skills"
-    },
-    {
-      "name": "pm-legal",
-      "description": "Legal skills: Contract Review, NDA Analyser, Legal Brief, Compliance Checklist. Flag risks in contracts and NDAs, draft legal memos in IRAC format, and generate GDPR, SOC 2, FCA and other compliance checklists. Not a substitute for qualified legal advice.",
-      "version": "1.0.0",
-      "category": "productivity",
-      "source": "./plugins/pm-legal",
-      "homepage": "https://github.com/mohitagw15856/pm-claude-skills"
-    },
-    {
-      "name": "pm-finance",
-      "description": "Finance skills: Financial Model Narrative, Budget Variance Analysis, Investor Pitch Deck, Financial Due Diligence. Turn numbers into board-ready narratives, explain variances, structure pitch decks, and generate DD checklists.",
-      "version": "1.0.0",
-      "category": "productivity",
-      "source": "./plugins/pm-finance",
-      "homepage": "https://github.com/mohitagw15856/pm-claude-skills"
-    },
-    {
-      "name": "pm-hr",
-      "description": "HR skills: Job Description Writer, Onboarding Plan, Employee Engagement Survey, Redundancy Consultation. Write inclusive JDs, build 30/60/90-day plans, design engagement surveys, and structure legally compliant redundancy processes.",
-      "version": "1.0.0",
-      "category": "productivity",
-      "source": "./plugins/pm-hr",
-      "homepage": "https://github.com/mohitagw15856/pm-claude-skills"
-    },
-    {
-      "name": "pm-sales",
-      "description": "Sales skills: Sales Battlecard, Discovery Call Prep, Proposal Writer, Account Plan. Build competitive battlecards, prepare structured discovery calls, write winning proposals, and create strategic account plans.",
-      "version": "1.0.0",
-      "category": "productivity",
-      "source": "./plugins/pm-sales",
-      "homepage": "https://github.com/mohitagw15856/pm-claude-skills"
-    },
-    {
-      "name": "pm-operations",
-      "description": "Operations skills: Process Documentation, SOP Writer, Vendor Evaluation, Project Status Report. Document workflows, write audit-ready SOPs, evaluate vendors with weighted scorecards, and produce RAG status reports.",
-      "version": "1.0.0",
-      "category": "productivity",
-      "source": "./plugins/pm-operations",
-      "homepage": "https://github.com/mohitagw15856/pm-claude-skills"
-    },
-    {
-      "name": "pm-research",
-      "description": "Research and healthcare skills: Clinical Case Summary, Research Protocol, Patient Communication, Literature Review. Write SBAR handovers, design research protocols, draft accessible patient communications, and structure literature reviews.",
-      "version": "1.0.0",
-      "category": "productivity",
-      "source": "./plugins/pm-research",
-      "homepage": "https://github.com/mohitagw15856/pm-claude-skills"
-    },
-    {
-      "name": "pm-cross",
-      "description": "Cross-profession skills: Press Release, Grant Proposal, Executive Summary. Write journalist-ready press releases, structure grant applications aligned to funder priorities, and produce decision-ready executive summaries for any audience.",
-      "version": "1.0.0",
-      "category": "productivity",
-      "source": "./plugins/pm-cross",
-      "homepage": "https://github.com/mohitagw15856/pm-claude-skills"
     }
   ]
 }
+EOF
+
+echo "✓ marketplace.json updated to v4.0.0 with 14 plugins"
+echo ""
+echo "Next:"
+echo "  git add .claude-plugin/marketplace.json"
+echo "  git commit -m 'fix: update marketplace.json to v4.0.0 with 14 plugins'"
+echo "  git push origin main"

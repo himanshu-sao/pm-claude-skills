@@ -1,3 +1,14 @@
+#!/bin/bash
+
+# =============================================================================
+# update-marketplace.sh
+# Run from the ROOT of your pm-claude-skills repo.
+# Rewrites .claude-plugin/marketplace.json with all 21 plugins (80 skills).
+# =============================================================================
+
+set -e
+
+cat > .claude-plugin/marketplace.json << 'EOF'
 {
   "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
   "name": "pm-claude-skills",
@@ -178,3 +189,15 @@
     }
   ]
 }
+EOF
+
+echo "✓ marketplace.json updated to v5.0.0 with 21 plugins (80 skills)"
+echo ""
+echo "Next:"
+echo "  git add .claude-plugin/marketplace.json"
+echo "  git commit -m 'chore: update marketplace.json to v5.0.0 — 21 plugins, 80 skills'"
+echo "  git push origin main"
+echo ""
+echo "Then in Claude Code:"
+echo "  /plugin marketplace remove mohitagw15856/pm-claude-skills"
+echo "  /plugin marketplace add mohitagw15856/pm-claude-skills"

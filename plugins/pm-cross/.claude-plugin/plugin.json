@@ -1,0 +1,13 @@
+{
+  "$schema": "https://anthropic.com/claude-code/plugin.schema.json",
+  "name": "pm-cross",
+  "version": "1.0.0",
+  "description": "Cross-profession skills: Press Release, Grant Proposal, Executive Summary. Write journalist-ready press releases, structure grant applications aligned to funder priorities, and produce decision-ready executive summaries for any audience.",
+  "author": {
+    "name": "Mohit Aggarwal",
+    "email": "mohit15856@gmail.com"
+  },
+  "homepage": "https://github.com/mohitagw15856/pm-claude-skills",
+  "license": "MIT",
+  "keywords": ["communications", "press-release", "grant", "executive-summary", "briefing", "funding", "media"]
+}
