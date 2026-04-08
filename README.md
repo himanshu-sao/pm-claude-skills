@@ -1,8 +1,8 @@
-# 🧠 Claude Skills Library — 80 Skills for Every Profession
+# 🧠 Claude Skills Library — 90 Skills for Every Profession
 
-> **Save 8–10 hours per week across 13 professions. Install in 2 minutes.**
+> **Save 8–10 hours per week across 14 professions. Install in 2 minutes.**
 
-A community-built library of Claude Skills covering product management, marketing, engineering, data, design, leadership, legal, finance, HR, sales, operations, research, and more. Each skill is a structured SKILL.md file that teaches Claude how to produce professional-grade outputs for your specific workflows.
+A community-built library of Claude Skills covering product management, marketing, engineering, data, design, Figma, leadership, legal, finance, HR, sales, operations, research, and more. Each skill is a structured SKILL.md file that teaches Claude how to produce professional-grade outputs for your specific workflows.
 
 ---
 
@@ -10,7 +10,7 @@ A community-built library of Claude Skills covering product management, marketin
 
 In Claude Code, run:
 
-/plugin marketplace add https://github.com/mohitagw15856/pm-claude-skills
+/plugin marketplace add https://github.com/mohitagw15856/pm-claude-skills 
 
 
 Or install by profession:
@@ -23,6 +23,7 @@ claude plugin install pm-sales@pm-claude-skills          # Sales
 claude plugin install pm-operations@pm-claude-skills     # Operations
 claude plugin install pm-research@pm-claude-skills       # Research & Healthcare
 claude plugin install pm-cross@pm-claude-skills          # Cross-profession
+claude plugin install pm-figma@pm-claude-skills          # Figma
 
 
 Or clone and symlink for auto-updates:
@@ -47,12 +48,14 @@ This repo was built alongside a published article series. Read the full story:
 | Part 5 | What Google, Meta and Anthropic Want From PMs — And the Claude Skills That Deliver It | [Read →](https://medium.com/@mohit15856/what-google-meta-and-anthropic-want-from-pms-and-the-claude-skills-that-deliver-it-b0f2b6cd9340) |
 | Part 6 | I Tested Anthropic's Skill Creator Plugin on My Own Skills | [Read →](https://medium.com/all-about-claude/i-tested-anthropics-skill-creator-plugin-on-my-own-skills-here-s-what-i-found-23ad406b0825) |
 | Part 7 | 33 Claude Skills for PMs Are Now in the Claude Code Marketplace | [Read →](https://medium.com/product-powerhouse/33-claude-skills-for-pms-are-now-in-the-claude-code-marketplace-heres-how-to-install-them-7968ab6bb1e1) |
-| Part 8 | I Added 20 New Claude Skills Beyond Product Management | [Read →](https://medium.com/product-powerhouse/i-built-20-new-claude-skills-for-every-profession-heres-the-full-library-50278e00bf72)|
-| Part 9 | 80 Claude Skills for Every Profession — Lawyers, Doctors, Finance, HR, Sales and More | [Read →](https://medium.com/@mohit15856/80-claude-skills-for-every-profession-lawyers-doctors-finance-hr-sales-and-more-3dfde9ec0033)|
+| Part 8 | I Added 20 New Claude Skills Beyond Product Management | [Read →](https://medium.com/product-powerhouse/i-built-20-new-claude-skills-for-every-profession-heres-the-full-library-50278e00bf72) |
+| Part 9 | 80 Claude Skills for Every Profession — Lawyers, Doctors, Finance, HR, Sales and More | [Read →](https://medium.com/@mohit15856/80-claude-skills-for-every-profession-lawyers-doctors-finance-hr-sales-and-more-3dfde9ec0033) |
+| Part 10 | A Day in the Life With 80 Claude Skills — What Actually Gets Triggered | [Read →](https://medium.com/@mohit15856/80-claude-skills-for-every-profession-lawyers-doctors-finance-hr-sales-and-more-3dfde9ec0033)|
+| Part 11 | 10 Figma Claude Skills for PMs and Designers — The Complete Figma Toolkit | *Latest — Link TBC* |
 
 ---
 
-## 🗂️ All 80 Skills
+## 🗂️ All 90 Skills
 
 ### 🛠️ Product Management (Skills 1–33)
 **Bundles:** `pm-essentials` · `pm-discovery` · `pm-planning` · `pm-delivery` · `pm-analytics` · `pm-strategy` · `pm-advanced` · `pm-rituals`
@@ -228,6 +231,27 @@ This repo was built alongside a published article series. Read the full story:
 
 ---
 
+### 🖼️ Figma (Skills 81–90)
+**Bundle:** `pm-figma`
+
+| # | Skill | Folder | What It Does |
+|---|---|---|---|
+| 81 | **Figma Component Audit** | `skills/figma-component-audit/` | Audit component library for naming issues, coverage gaps, and variant completeness |
+| 82 | **Figma Design Brief** | `skills/figma-design-brief/` | Convert PRDs and feature requests into structured Figma design briefs |
+| 83 | **Figma Annotation Guide** | `skills/figma-annotation-guide/` | Generate complete developer handoff annotations covering all states and edge cases |
+| 84 | **Figma Design Review** | `skills/figma-design-review/` | PM design review against requirements with explicit approval status |
+| 85 | **Figma User Flow Planner** | `skills/figma-user-flow-planner/` | Map all screens, states, and decision points before opening Figma |
+| 86 | **Figma Variant Matrix** | `skills/figma-variant-matrix/` | Define all component variants, properties, and states before building |
+| 87 | **Figma Spacing System** | `skills/figma-spacing-system/` | Design a complete spacing scale, grid, and token system |
+| 88 | **Figma Prototype Plan** | `skills/figma-prototype-plan/` | Plan prototype scope, interactions, and test task scripts for user testing |
+| 89 | **Figma Design QA** | `skills/figma-design-qa/` | Pre-handoff QA checklist covering file hygiene, states, accessibility, and handoff readiness |
+| 90 | **Figma Design Critique (PM)** | `skills/figma-design-critique-pm/` | PM-perspective design critique focused on product outcomes, not aesthetics |
+
+claude plugin install pm-figma@pm-claude-skills
+
+
+---
+
 ## 🤝 Contributing — Add Your Skill
 
 This is an open-source community library. If you've built a skill that saves you time, share it here.
@@ -304,21 +328,29 @@ claude plugin install pm-sales@pm-claude-skills
 claude plugin install pm-operations@pm-claude-skills
 claude plugin install pm-research@pm-claude-skills
 claude plugin install pm-cross@pm-claude-skills
+claude plugin install pm-figma@pm-claude-skills
 
 
 ---
-🛠️ Custom Skills for Your Team
-The 80 skills in this library are built for general professional workflows. But the most powerful version of Claude Skills is one built specifically for your team — your templates, your terminology, your processes, your quality standards.
-What custom skills look like in practice:
 
-A law firm's contract review skill trained on their specific clause library and risk tolerance
-A SaaS company's sprint brief skill that knows their engineering conventions and definition of done
-A finance team's board pack skill that follows their exact narrative structure and slide format
-An HR team's job description skill that reflects their values language and includes their specific benefits
+## 🛠️ Custom Skills for Your Team
+
+The 90 skills in this library are built for general professional workflows. But the most powerful version of Claude Skills is one built specifically for *your* team — your templates, your terminology, your processes, your quality standards.
+
+**What custom skills look like in practice:**
+
+- A law firm's contract review skill trained on their specific clause library and risk tolerance
+- A SaaS company's sprint brief skill that knows their engineering conventions and definition of done
+- A finance team's board pack skill that follows their exact narrative structure and slide format
+- An HR team's job description skill that reflects their values language and includes their specific benefits
 
 The difference between a generic skill and one built for your context is significant. Generic skills eliminate the blank page. Custom skills eliminate the rework.
-If you want skills built for your team's specific workflows — [get in touch](mailto:mohit15856@gmail.com).
+
+**If you want skills built for your team's specific workflows — [get in touch](mailto:mohit15856@gmail.com).**
+
 Include a brief description of your team, the workflows you want to automate, and the tools you use. I'll come back to you within 48 hours.
+
+---
 
 ## 📖 How Skills Work
 
