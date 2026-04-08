@@ -1,3 +1,14 @@
+#!/bin/bash
+
+# =============================================================================
+# update-marketplace.sh
+# Run from the ROOT of your pm-claude-skills repo.
+# Rewrites .claude-plugin/marketplace.json with all 14 plugins.
+# =============================================================================
+
+set -e
+
+cat > .claude-plugin/marketplace.json << 'EOF'
 {
   "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
   "name": "pm-claude-skills",
@@ -122,3 +133,11 @@
     }
   ]
 }
+EOF
+
+echo "✓ marketplace.json updated to v4.0.0 with 14 plugins"
+echo ""
+echo "Next:"
+echo "  git add .claude-plugin/marketplace.json"
+echo "  git commit -m 'fix: update marketplace.json to v4.0.0 with 14 plugins'"
+echo "  git push origin main"
