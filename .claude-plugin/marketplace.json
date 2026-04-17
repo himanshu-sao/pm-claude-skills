@@ -1,8 +1,8 @@
 {
   "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
   "name": "pm-claude-skills",
-  "version": "5.1.0",
-  "description": "90 Claude Skills across 14 professions — product management, marketing, engineering, data, design, Figma, leadership, legal, finance, HR, sales, operations, research, and more. Save 10-15 hours per week.",
+  "version": "5.2.0",
+  "description": "93 Claude Skills across 14 professions — product management, legal, finance, HR, sales, engineering, design, Figma, operations, research, and more. Now with Opus 4.7-optimised vision and document skills.",
   "owner": {
     "name": "Mohit Aggarwal",
     "email": "mohit15856@gmail.com"
@@ -10,8 +10,8 @@
   "plugins": [
     {
       "name": "pm-essentials",
-      "description": "Core PM skills: PRD Template, Meeting Notes, Stakeholder Update, User Research Synthesis, Competitive Analysis. The 5 skills every PM needs first.",
-      "version": "3.0.0",
+      "description": "Core PM skills: PRD Template, Meeting Notes, Stakeholder Update, User Research Synthesis, Competitive Analysis, Word Doc Tracked Changes. The essentials every PM needs first.",
+      "version": "3.1.0",
       "category": "productivity",
       "source": "./plugins/pm-essentials",
       "homepage": "https://github.com/mohitagw15856/pm-claude-skills"
@@ -34,8 +34,8 @@
     },
     {
       "name": "pm-delivery",
-      "description": "Sprint & delivery skills: Sprint Planning, Technical Spec Template, A/B Test Planner, Go-to-Market Planner, Product Launch Checklist, Sprint Brief, Retro Analysis.",
-      "version": "3.0.0",
+      "description": "Sprint & delivery skills: Sprint Planning, Technical Spec, A/B Test Planner, Go-to-Market Planner, Launch Checklist, Sprint Brief, Retro Analysis, PPTX Slide Auditor.",
+      "version": "3.1.0",
       "category": "productivity",
       "source": "./plugins/pm-delivery",
       "homepage": "https://github.com/mohitagw15856/pm-claude-skills"
@@ -83,15 +83,15 @@
     {
       "name": "pm-engineering",
       "description": "Engineering & tech skills: Code Review Checklist, Incident Postmortem, API Docs Writer, Architecture Decision Record. Structured outputs for engineering teams and technical PMs.",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "category": "productivity",
       "source": "./plugins/pm-engineering",
       "homepage": "https://github.com/mohitagw15856/pm-claude-skills"
     },
     {
       "name": "pm-data",
-      "description": "Data & analytics skills: Metrics Framework, SQL Query Explainer, Dashboard Brief. Build North Star metric trees, explain and optimise SQL, and spec dashboards from business questions.",
-      "version": "1.0.0",
+      "description": "Data & analytics skills: Metrics Framework, SQL Query Explainer, Dashboard Brief, Chart Data Extractor. Build North Star metric trees, explain SQL, spec dashboards, and digitise chart images.",
+      "version": "1.1.0",
       "category": "productivity",
       "source": "./plugins/pm-data",
       "homepage": "https://github.com/mohitagw15856/pm-claude-skills"
@@ -123,7 +123,7 @@
     {
       "name": "pm-legal",
       "description": "Legal skills: Contract Review, NDA Analyser, Legal Brief, Compliance Checklist. Flag risks in contracts and NDAs, draft legal memos in IRAC format, and generate GDPR, SOC 2, FCA and other compliance checklists.",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "category": "productivity",
       "source": "./plugins/pm-legal",
       "homepage": "https://github.com/mohitagw15856/pm-claude-skills"
@@ -179,7 +179,7 @@
     {
       "name": "pm-figma",
       "description": "Figma skills for PMs and designers: Component Audit, Design Brief, Annotation Guide, Design Review, User Flow Planner, Variant Matrix, Spacing System, Prototype Plan, Design QA, PM Design Critique. Work smarter across the full Figma design lifecycle.",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "category": "productivity",
       "source": "./plugins/pm-figma",
       "homepage": "https://github.com/mohitagw15856/pm-claude-skills"

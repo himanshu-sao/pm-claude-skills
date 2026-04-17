@@ -1,114 +1,107 @@
 ---
 name: code-review-checklist
-description: "Generate a tailored code review checklist for any PR, language, or risk level. Use when asked to create a code review checklist, review guidelines, PR standards, or quality gates for a codebase. Produces a structured, prioritised checklist adapted to the specific language, PR type, and risk level."
+description: "Generate a tailored code review checklist for any pull request based on the language, type of change, and risk level. Use when asked to review code, check a PR, review a pull request, or generate a code review checklist. Produces a focused checklist with language-specific checks, risk-level-appropriate depth, and a clear approve/request-changes recommendation. Optimised for Opus 4.7 and newer models."
 ---
 
 # Code Review Checklist Skill
 
-This skill generates a structured, prioritised code review checklist tailored to a specific PR, language, and risk level. It helps reviewers be thorough without being bureaucratic.
+Produces a tailored code review checklist for a specific pull request — scaled to the language, type of change, and risk level. Not a generic template.
 
 ## Required Inputs
 
 Ask the user for these if not provided:
-- **Programming language(s)** (e.g. Python, TypeScript, Go, Java)
-- **PR type** (new feature / bug fix / refactor / performance improvement / security patch / infrastructure change)
-- **Risk level** (Low: internal tooling, Low traffic / Medium: user-facing feature / High: payment, auth, data pipeline, public API)
-- **Team context** (optional: team size, seniority mix, any known recurring issues)
+- **Language and framework** (e.g. TypeScript + React / Python + FastAPI / Go)
+- **Type of change** (feature / bug fix / refactor / dependency upgrade / security patch / performance)
+- **Risk level** (low / medium / high / critical)
+- **PR description** (paste the description or link to the PR)
+- **Author context** (new starter / experienced / external contributor)
 
 ## Output Structure
 
-### 1. Checklist Header
+### 1. Review Summary
+**PR:** [Title or reference]
+**Scope assessment:** [Small / Medium / Large / Too large — should be split]
+**Recommended review depth:** [Skim / Standard / Deep dive]
+**Estimated review time:** [Minutes]
 
-**PR:** [Title if provided]
-**Language:** [Language]
-**Type:** [PR Type]
-**Risk Level:** [Low / Medium / High]
-**Estimated review depth:** [Quick scan ~15 min / Standard ~30 min / Deep review ~60 min+]
+### 2. Correctness Checks
 
----
+Language-specific correctness checks — choose based on the language stated:
 
-### 2. The Checklist
+**For TypeScript/JavaScript:**
+- Type definitions match actual usage
+- No implicit `any` in non-test code
+- Async/await used consistently; no unhandled promises
+- Null/undefined handling is explicit
 
-Organise into sections. Mark each item with a priority indicator:
-- 🔴 **MUST** — Blocking. PR should not merge without this.
-- 🟡 **SHOULD** — Important. Address before merge unless there's a good reason not to.
-- 🟢 **CONSIDER** — Nice to have. Worth a comment but not blocking.
+**For Python:**
+- Type hints present on public functions
+- Exception handling is specific (no bare except)
+- Resources are closed (context managers, with blocks)
 
-#### Section A: Correctness
-- 🔴 Does the code do what the ticket/requirement describes?
-- 🔴 Are edge cases handled? (nulls, empty arrays, zero values, max values)
-- 🔴 Are error states handled and surfaced appropriately?
-- 🟡 Does the happy path have adequate test coverage?
-- 🟡 Are failure paths tested?
+**For Go:**
+- Errors are handled or explicitly ignored with a comment
+- Context propagation is correct
+- Goroutine lifetimes are bounded
 
-#### Section B: Security (scale with risk level — expand for High risk PRs)
-- 🔴 [High risk only] Is user input sanitised before use in queries or commands?
-- 🔴 [High risk only] Are auth/permission checks in place?
-- 🟡 Are secrets/credentials committed anywhere? (check .env handling)
-- 🟡 Are third-party dependencies known-safe versions?
+[Include only the section matching the stated language]
 
-#### Section C: Performance
-- 🟡 Are there N+1 query patterns in database calls?
-- 🟡 Is there unnecessary work inside loops?
-- 🟢 Are database queries indexed appropriately?
-- 🟢 Is caching considered where appropriate?
+### 3. Change-Type-Specific Checks
 
-#### Section D: Readability & Maintainability
-- 🟡 Are function and variable names clear without needing a comment to explain them?
-- 🟡 Are complex logic blocks explained with inline comments?
-- 🟢 Is the code consistent with existing patterns in the codebase?
-- 🟢 Are there any magic numbers that should be named constants?
+**For bug fixes:**
+- A test exists that would have caught this bug
+- The fix addresses root cause, not symptom
+- Related code paths checked for the same issue
 
-#### Section E: Language-Specific Checks
-[Populate this section based on the specified language. Examples below:]
+**For features:**
+- Acceptance criteria met
+- Edge cases handled (empty, large, concurrent)
+- Error paths tested, not just happy path
+- Telemetry/logging added for debugging
 
-**Python:**
-- 🟡 Are type hints used on function signatures?
-- 🟡 Are exceptions caught specifically (not bare `except:`)?
-- 🟢 Does it follow PEP 8 (or the team's linter config)?
+**For refactors:**
+- Behaviour unchanged (tests still pass)
+- No scope creep — refactor only
+- Complexity reduced, not just moved
 
-**TypeScript/JavaScript:**
-- 🔴 Are there any `any` types that should be properly typed?
-- 🟡 Are async/await patterns used consistently (no mixed Promise.then chains)?
-- 🟢 Are there unnecessary re-renders in React components?
+**For dependency upgrades:**
+- Breaking changes reviewed
+- Security advisories checked
+- License compatibility verified
 
-**Go:**
-- 🔴 Are errors checked (not ignored with `_`)?
-- 🟡 Are goroutines properly managed to prevent leaks?
-- 🟢 Are exported functions documented?
+[Include only the section matching the stated change type]
 
-#### Section F: PR Hygiene
-- 🟡 Is the PR a reasonable size? (>500 lines diff suggests it should be split)
-- 🟡 Does the PR description explain *why*, not just *what*?
-- 🟢 Are there linked tickets or context in the PR description?
-- 🟢 Are migration scripts or deployment notes included if needed?
+### 4. Risk-Appropriate Checks
 
----
+**Low risk:** basic correctness, style conventions, test coverage
+**Medium risk:** above + rollback plan, monitoring updates, performance considerations
+**High risk:** above + security implications, data migration safety, feature flag/gradual rollout
+**Critical risk:** above + staging validation plan, incident response plan, post-deploy verification checklist
 
-### 3. Risk-Specific Additions
+### 5. Testing Adequacy
+- Unit tests cover new logic
+- Integration tests cover the contract changes
+- Edge cases tested
+- Failure modes tested
+- Performance tests if performance-sensitive
 
-For **High risk** PRs, always add:
-- 🔴 Has this been tested in a staging environment?
-- 🔴 Is there a rollback plan?
-- 🔴 Has a second reviewer been assigned?
+### 6. Review Decision Framework
 
-For **Infrastructure / DB changes**, always add:
-- 🔴 Are migrations backward-compatible?
-- 🔴 Has the migration been tested against production data volume?
+**Approve if:** [2-3 specific conditions based on this PR]
+**Request changes if:** [Specific blockers]
+**Comment (non-blocking) if:** [Items worth discussing but not blocking merge]
 
----
+### 7. Common Pitfalls for This Change Type
+Based on the change type and language, flag 2-3 things reviewers typically miss for this combination.
 
 ## Quality Checks
-
-- [ ] Checklist is tailored to the specified language (not generic)
-- [ ] Risk level is reflected in the MUST vs SHOULD balance
-- [ ] Language-specific section covers the most common issues for that language
-- [ ] PR hygiene section is always present
-- [ ] High-risk additions are included when risk level = High
+- [ ] Checklist is tailored to the stated language (not generic)
+- [ ] Change-type-specific section is included
+- [ ] Risk-appropriate depth matches stated risk level
+- [ ] Decision framework is explicit
 
 ## Example Trigger Phrases
-
-- "Generate a code review checklist for a Python bug fix PR"
-- "Give me a review checklist for a high-risk TypeScript auth change"
-- "What should I check in this Go PR?"
-- "Create PR review standards for our team"
+- "Generate a code review checklist for [PR description]"
+- "What should I check in this pull request?"
+- "Give me a code review checklist for a [language] [change type]"
+- "Review checklist for a high-risk PR in [language]"
