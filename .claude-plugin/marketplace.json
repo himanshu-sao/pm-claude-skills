@@ -1,8 +1,8 @@
 {
   "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
   "name": "pm-claude-skills",
-  "version": "5.2.0",
-  "description": "93 Claude Skills across 14 professions — product management, legal, finance, HR, sales, engineering, design, Figma, operations, research, and more. Now with Opus 4.7-optimised vision and document skills.",
+  "version": "6.0.0",
+  "description": "100 Claude Skills across 14 professions — product management, legal, finance, HR, sales, engineering, design, Figma, operations, research, and more. Now with standardised quality checks, required inputs, and 7 new skills.",
   "owner": {
     "name": "Mohit Aggarwal",
     "email": "mohit15856@gmail.com"
@@ -74,8 +74,8 @@
     },
     {
       "name": "pm-gtm",
-      "description": "Marketing & GTM skills: Go-To-Market Planner, Content Calendar, Competitor Teardown, Email Campaign. Build positioning statements, messaging pillars, feature lists, use cases, and launch campaigns.",
-      "version": "1.0.0",
+      "description": "Marketing & GTM skills: Go-To-Market Planner, Content Calendar, Competitor Teardown, Email Campaign, SEO Content Brief, Media Pitch. Build positioning statements, messaging pillars, feature lists, use cases, launch campaigns, SEO briefs, and journalist pitches.",
+      "version": "1.1.0",
       "category": "productivity",
       "source": "./plugins/pm-gtm",
       "homepage": "https://github.com/mohitagw15856/pm-claude-skills"
@@ -130,32 +130,32 @@
     },
     {
       "name": "pm-finance",
-      "description": "Finance skills: Financial Model Narrative, Budget Variance Analysis, Investor Pitch Deck, Financial Due Diligence. Turn numbers into board-ready narratives, explain variances, structure pitch decks, and generate DD checklists.",
-      "version": "1.0.0",
+      "description": "Finance skills: Financial Model Narrative, Budget Variance Analysis, Investor Pitch Deck, Financial Due Diligence, Tax Planning Checklist. Turn numbers into board-ready narratives, explain variances, structure pitch decks, generate DD checklists, and review year-end tax planning opportunities.",
+      "version": "1.1.0",
       "category": "productivity",
       "source": "./plugins/pm-finance",
       "homepage": "https://github.com/mohitagw15856/pm-claude-skills"
     },
     {
       "name": "pm-hr",
-      "description": "HR skills: Job Description Writer, Onboarding Plan, Employee Engagement Survey, Redundancy Consultation. Write inclusive JDs, build 30/60/90-day plans, design engagement surveys, and structure legally compliant redundancy processes.",
-      "version": "1.0.0",
+      "description": "HR skills: Job Description Writer, Onboarding Plan, Employee Engagement Survey, Redundancy Consultation, Change Management Plan. Write inclusive JDs, build 30/60/90-day plans, design engagement surveys, structure redundancy processes, and manage organisational change with stakeholder analysis and adoption metrics.",
+      "version": "1.1.0",
       "category": "productivity",
       "source": "./plugins/pm-hr",
       "homepage": "https://github.com/mohitagw15856/pm-claude-skills"
     },
     {
       "name": "pm-sales",
-      "description": "Sales skills: Sales Battlecard, Discovery Call Prep, Proposal Writer, Account Plan. Build competitive battlecards, prepare structured discovery calls, write winning proposals, and create strategic account plans.",
-      "version": "1.0.0",
+      "description": "Sales skills: Sales Battlecard, Discovery Call Prep, Proposal Writer, Account Plan, Sales Forecasting Model. Build competitive battlecards, prepare discovery calls, write winning proposals, create account plans, and build pipeline-based revenue forecasts with scenario analysis.",
+      "version": "1.1.0",
       "category": "productivity",
       "source": "./plugins/pm-sales",
       "homepage": "https://github.com/mohitagw15856/pm-claude-skills"
     },
     {
       "name": "pm-operations",
-      "description": "Operations skills: Process Documentation, SOP Writer, Vendor Evaluation, Project Status Report. Document workflows, write audit-ready SOPs, evaluate vendors with weighted scorecards, and produce RAG status reports.",
-      "version": "1.0.0",
+      "description": "Operations skills: Process Documentation, SOP Writer, Vendor Evaluation, Project Status Report, Workshop Facilitation Guide. Document workflows, write audit-ready SOPs, evaluate vendors, produce RAG status reports, and design facilitated workshops with activity instructions and facilitator moves.",
+      "version": "1.1.0",
       "category": "productivity",
       "source": "./plugins/pm-operations",
       "homepage": "https://github.com/mohitagw15856/pm-claude-skills"
@@ -170,8 +170,8 @@
     },
     {
       "name": "pm-cross",
-      "description": "Cross-profession skills: Press Release, Grant Proposal, Executive Summary. Write journalist-ready press releases, structure grant applications aligned to funder priorities, and produce decision-ready executive summaries.",
-      "version": "1.0.0",
+      "description": "Cross-profession skills: Press Release, Grant Proposal, Executive Summary, Teaching Lesson Plan. Write journalist-ready press releases, structure grant applications, produce decision-ready executive summaries, and design complete lesson plans for any subject, audience, or setting.",
+      "version": "1.1.0",
       "category": "productivity",
       "source": "./plugins/pm-cross",
       "homepage": "https://github.com/mohitagw15856/pm-claude-skills"
